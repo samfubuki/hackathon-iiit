@@ -1,0 +1,30 @@
+{% load static %}
+<br>
+
+<div class="row">
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="total-orders">
+			  	<div class="card-header">
+			  		<h5 class="card-title">My Patients</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{total}}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="orders-delivered">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Pending Patients</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{remaining}}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+</div>

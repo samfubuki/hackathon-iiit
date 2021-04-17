@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Quiz</title>
+    
+    <!-- style.css -->
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+</head>
+<body style="background-color: blanchedalmond;">
+    <div class="final">
+        <h2>You may be affected with coronavirus</h2><br>
+        <h3>Please consult doctor immediately!</h3><br>
+        <i class="fas fa-hand-point-down"></i><br>
+        <a href="{% url 'login' %}"><button>Book Appointment</button><br></a>
+        <hr>
+    </div>
+    <script src="https://kit.fontawesome.com/d56261bbb9.js"></script>
+
+</body>
+<footer class="footer">
+    <h2>Some precautionary measures: </h2>
+    <ul>
+        <li>Stay at home at least 14 days from when you first find symptoms</li>
+        <li> Do not invite visitors or go out</li>
+        <li>Choose a well ventilated room and keep away from others</li>
+        <li>Use face mask</li>
+        <li>Dispose all waste in a clinical waste bag</li>
+        <li>Clean the room and reused things properly when isolation is over</li>
+        <li>Use mask, gloves and apron while cleaning the room</li>
+    </ul>
+</footer>
+</html>

@@ -1,0 +1,72 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="{% static '/css/register.css' %}" />
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="{% url 'login' %}" method="get">
+                {% csrf_token %}
+
+                <h1>Doctor Signup</h1>
+                <input type="text" placeholder="Name" , name = 'name'/>
+                <input type="email" placeholder="Email" name = 'email'/>
+                <input type="password" placeholder="Create Password" name = 'password1'/>
+                <input type="password" placeholder="Confirm Password" name = 'password2'/>
+                <input type="text" placeholder="City" name = 'city'/>
+                <input type="tel" placeholder="Phone number" name = 'phone'/>
+
+                <button type="submit">Sign Up</button>
+                <p>Already have an account !Login <a href="{% url 'login' %}" style="color:blue">here</a></p>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <h1>Patient Signup</h1>
+                <input type="text" placeholder="Name" />
+                <input type="email" placeholder="Email" />
+                <input type="password" placeholder="Create Password" />
+                <input type="password" placeholder="Confirm Password" />
+                <input type="text" placeholder="City" />
+                <input type="tel" placeholder="Phone number" />
+                <button>Sign Up</button>
+                <p>Already have an account !Login <a href="{% url 'login' %}" style="color:blue">here</a></p>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>I am a patient!</h1>
+                    <p>Enter your personal details and start journey with us</p>
+                    <button class="ghost" id="signIn">Sign Up</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>I am a doctor!</h1>
+                    <p>Enter your personal details and start journey with us</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>
+            Created with <i class="fa fa-heart"></i> by
+            <a target="_blank" href="https://florin-pop.com">Florin Pop</a>
+            - Read how I created this and how you can join the challenge
+            <a target="_blank" href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/">here</a>.
+        </p>
+    </footer>
+
+    <script src="{% static '/js/register.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+{% load static %}
+{% include 'healthcare2/status.html' %}
+
+
+<div class="row">
+    <div class="col-md-5">
+        <h5>MY-PATIENTS:</h5>
+        <hr>
+        <div class="card card-body">
+            <a class="btn btn-primary  btn-sm btn-block" href="">View Patient Details</a>
+            <table class="table table-sm">
+                <tr>
+                    <th></th>
+                    <th>Patient</th>
+                    <th>Phone</th>
+                </tr>
+
+                {% for patient in rem_patients %}
+                <tr>
+                    <td><a class='btn btn-sm btn-info' href="{% url 'patient' patient.id %}">View</a></td>
+                    <td>{{patient.name}}</td>
+                    <td>{{patient.phone}}</td>
+                </tr>
+                {% endfor %}
+
+            </table>
+        </div>
+    </div>
+
+    <div class="col-md-7">
+        <h5>PENDING PATIENTS</h5>
+        <hr>
+        <div class="card card-body">
+            
+            <table class="table table-sm">
+                <tr>
+                    <th>Name</th>
+                    <th>Phone</th>
+                </tr>
+
+                {% for patient in tot_patients %}
+					<tr>
+						<td>{{patient.name}}</td>
+						<td>{{patient.phone}}</td>
+						<td><a class='btn btn-sm btn-info' href="{% url 'accept_patient' patient.id %}">Accept</a></td>
+						<td><a class='btn btn-sm btn-danger' href="#">View</a></td>  
+					</tr>
+				{% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+
+ 
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>table design</title>
+    <link rel="stylesheet" href="{% static '/css/doctor_dashboard.css' %}">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">Vkarma</label>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#"><i class="fa fa-bell"></i></a></li>
+            <li><a href="#"><i class="fa fa-filter"></i></a></li>
+            <li><a href="#">Log Out</a></li>
+        </ul>
+    </nav>
+    <div class="sidebar">
+        <a href="#"><i class="fa fa-user"></i><span> New Patients</span></a>
+        <a href="#"><i class="fa fa-user"></i><span> My Patients</span></a>
+    </div>
+    <div class="container">
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>Sno.</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>City</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Dominic</td>
+                    <td>Dominic@123.com</td>
+                    <td>9998887777</td>
+                    <td>Delhi</td>
+                    <td>30</td>
+                    <td>
+                        <a class="btn btn-sm btn-danger" href="#"><i class="fas fa-trash-alt"></i> delete</a>
+                    </td>
+                </tr>
+                <tr class="active-row">
+                    <td>2</td>
+                    <td>Saumya</td>
+                    <td>Sam@123.com</td>
+                    <td>9998887377</td>
+                    <td>Delhi</td>
+                    <td>25</td>
+                    <td>
+                        <a class="btn btn-sm btn-danger" href="#"><i class="fas fa-trash-alt"></i> delete</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Saurabh</td>
+                    <td>SArabh@123.com</td>
+                    <td>9348887777</td>
+                    <td>Mathura</td>
+                    <td>20</td>
+                    <td>
+                        <a class="btn btn-sm btn-danger" href="#"><i class="fas fa-trash-alt"></i> delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html> -->
